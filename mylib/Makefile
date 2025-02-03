@@ -77,6 +77,7 @@ TARGET = lib/libft.a
 all: $(TARGET)
 
 $(TARGET): $(OBJ)
+	@mkdir -p lib
 	ar rcs $@ $^
 
 clean:
