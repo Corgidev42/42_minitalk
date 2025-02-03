@@ -7,7 +7,9 @@ SRC_CLIENT = src/client.c
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -Iinclude
 
-LIBFT = libft.a
+# Library path for libft.a
+LIBFT_DIR = mylib
+LIBFT = $(LIBFT_DIR)/lib/libft.a
 
 all: $(LIBFT) $(NAME_SERVER) $(NAME_CLIENT)
 
@@ -17,10 +19,15 @@ $(NAME_SERVER): $(SRC_SERVER) $(LIBFT)
 $(NAME_CLIENT): $(SRC_CLIENT) $(LIBFT)
 	$(CC) $(CFLAGS) -o $(NAME_CLIENT) $(SRC_CLIENT) $(LIBFT)
 
+$(LIBFT):
+	make -C $(LIBFT_DIR)
+
 clean:
 	rm -f $(NAME_SERVER) $(NAME_CLIENT)
-	make -C libft clean
-re: clean all
+	make -C $(LIBFT_DIR) clean
 
-$(LIBFT):
-	make -C libft
+fclean: clean
+	make -C $(LIBFT_DIR) fclean
+	rm -f $(LIBFT)
+
+re: fclean all

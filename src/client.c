@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   client.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vbonnard <vbonnard@student.42perpignan.    +#+  +:+       +#+        */
+/*   By: vbonnard <vbonnard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/29 15:06:50 by vbonnard          #+#    #+#             */
-/*   Updated: 2025/01/29 15:10:26 by vbonnard         ###   ########.fr       */
+/*   Created: 2025/01/30 15:40:50 by vbonnard          #+#    #+#             */
+/*   Updated: 2025/01/30 15:52:04 by vbonnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "client.h"
 
-volatile sig_atomic_t	received_ack = 0;
+volatile sig_atomic_t	g_received_ack = 0;
 
 void	ack_handler(int sig)
 {
 	(void)sig;
-	received_ack = 1;
+	g_received_ack = 1;
 }
 
 void	send_char(pid_t server_pid, char c)
@@ -27,12 +27,12 @@ void	send_char(pid_t server_pid, char c)
 	i = 7;
 	while (i >= 0)
 	{
-		received_ack = 0;
+		g_received_ack = 0;
 		if ((c >> i) & 1)
 			kill(server_pid, SIGUSR2);
 		else
 			kill(server_pid, SIGUSR1);
-		while (!received_ack)
+		while (!g_received_ack)
 			pause();
 		i--;
 	}
@@ -46,6 +46,9 @@ void	send_string(pid_t server_pid, const char *str)
 		str++;
 	}
 	send_char(server_pid, '\0');
+	while (!g_received_ack)
+		pause();
+	ft_printf("OK\n");
 }
 
 int	main(int argc, char *argv[])
@@ -58,6 +61,7 @@ int	main(int argc, char *argv[])
 	sigemptyset(&sa.sa_mask);
 	sa.sa_flags = 0;
 	sigaction(SIGUSR1, &sa, NULL);
+	sigaction(SIGUSR2, &sa, NULL);
 	if (argc != 3)
 	{
 		ft_printf("Usage: ./client [PID] 'message'\n");

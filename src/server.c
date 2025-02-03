@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   server.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vbonnard <vbonnard@student.42perpignan.    +#+  +:+       +#+        */
+/*   By: vbonnard <vbonnard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 17:44:31 by vbonnard          #+#    #+#             */
-/*   Updated: 2025/01/29 15:12:56 by vbonnard         ###   ########.fr       */
+/*   Updated: 2025/01/30 15:49:39 by vbonnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void	store_character(char *buffer, int *buffer_index, char current_char)
 	if (current_char == '\0' || *buffer_index == INITIAL_BUFFER_SIZE - 1)
 	{
 		write(1, buffer, *buffer_index);
+		write(1, "\n", 1);
 		*buffer_index = 0;
 	}
 }
@@ -45,6 +46,8 @@ void	handle_bit_in_signal(int sig, siginfo_t *info, void *context)
 	if (++bit_index == 8)
 	{
 		store_character(buffer, &buffer_index, current_char);
+		if (current_char == '\0')
+			kill(info->si_pid, SIGUSR2);
 		bit_index = 0;
 		current_char = 0;
 	}
