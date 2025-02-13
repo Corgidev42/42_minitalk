@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   server.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vbonnard <vbonnard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vbonnard <vbonnard@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 17:44:31 by vbonnard          #+#    #+#             */
-/*   Updated: 2025/01/30 15:49:39 by vbonnard         ###   ########.fr       */
+/*   Updated: 2025/02/13 11:31:12 by vbonnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "server.h"
-
-#define INITIAL_BUFFER_SIZE 4096
 
 void	init_buffer(char **buffer)
 {
