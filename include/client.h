@@ -6,7 +6,7 @@
 /*   By: vbonnard <vbonnard@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 15:09:41 by vbonnard          #+#    #+#             */
-/*   Updated: 2025/02/13 11:30:01 by vbonnard         ###   ########.fr       */
+/*   Updated: 2025/02/13 13:04:21 by vbonnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-extern volatile sig_atomic_t g_received_ack;
+extern volatile sig_atomic_t	g_received_ack;
 
 /**
  * @brief Gère le signal d'accusé de réception provenant du serveur.
