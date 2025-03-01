@@ -3,7 +3,8 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vbonnard <vbonnard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vbonnard <vbonnard@student.42perpignan.fr>          +#+  +:+      
+	+#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 10:07:52 by ezeppa            #+#    #+#             */
 /*   Updated: 2025/01/31 16:08:50 by vbonnard         ###   ########.fr       */
@@ -194,7 +195,7 @@ t_list				*ft_lstlast(t_list *lst);
 
 /**
 
-	* Creates a new list by applying a function 
+	* Creates a new list by applying a function
 	to each node's content in the original list.
  *
  * @param lst The list to map.
@@ -225,7 +226,7 @@ int					ft_lstsize(t_list *lst);
 
 /**
 
-	* Sets the first 'n' bytes of the memory 
+	* Sets the first 'n' bytes of the memory
 	area pointed to by 's' to the value 'c'.
  *
  * @param s The memory area to modify.
@@ -266,7 +267,7 @@ void				*ft_memmove(void *dest, const void *src, size_t n);
 
 /**
 
-	* Searches for the first occurrence of the 
+	* Searches for the first occurrence of the
 	character 'c' in the memory area 's'.
  *
  * @param s The memory area to search.
@@ -401,7 +402,7 @@ int					ft_strcmp(const char *s1, const char *s2);
  * @param s1 The first string to compare.
  * @param s2 The second string to compare.
  * @param n The maximum number of characters to compare.
- * @return A negative integer if the first n 
+ * @return A negative integer if the first n
  * characters of s1 are less than those of s2,
 	0 if they are equal, a positive integer otherwise.
  */
@@ -422,7 +423,7 @@ char				*ft_strnstr(const char *big, const char *little,
 /**
  * @brief Creates a new string that is a copy of the given string.
  * @param s The string to copy.
- * @return A pointer to the newly allocated string, 
+ * @return A pointer to the newly allocated string,
  * or NULL if allocation fails.
  */
 char				*ft_strdup(const char *s);
@@ -467,7 +468,7 @@ char				**ft_split(char const *s, char c);
 
 /**
 
-	* @brief Applies a function to each character 
+	* @brief Applies a function to each character
 	of a string to return a new string.
  *
  * @param s The string to process.
@@ -531,7 +532,7 @@ int					ft_printf(const char *format, ...);
 t_format			*init_format(const char **ptr);
 
 /**
- * Writes a character to the standard output and 
+ * Writes a character to the standard output and
  * returns the number of characters printed.
  *
  * @param c The character to be printed.
@@ -540,7 +541,7 @@ t_format			*init_format(const char **ptr);
 int					ft_putchar_size(char c);
 
 /**
- * Writes a string to the standard output and 
+ * Writes a string to the standard output and
  * returns the number of characters printed.
  *
  * @param str The string to be printed.
@@ -558,7 +559,7 @@ int					ft_putstr_size(char *str);
 char				*convert_to_hexa(unsigned long long nb, char *base);
 
 /**
- * Prints a character with the specified format 
+ * Prints a character with the specified format
  * and returns the number of characters printed.
  *
  * @param format The format structure containing the formatting information.
@@ -568,7 +569,7 @@ char				*convert_to_hexa(unsigned long long nb, char *base);
 int					print_c(t_format *format, char c);
 
 /**
- * Prints a string with the specified format 
+ * Prints a string with the specified format
  * and returns the number of characters printed.
  *
  * @param format The format structure containing the formatting information.
@@ -578,7 +579,7 @@ int					print_c(t_format *format, char c);
 int					print_s(t_format *format, char *str);
 
 /**
- * Prints a pointer address with the specified 
+ * Prints a pointer address with the specified
  * format and returns the number of characters printed.
  *
  * @param format The format structure containing the formatting information.
@@ -588,7 +589,7 @@ int					print_s(t_format *format, char *str);
 int					print_p(t_format *format, void *ptr);
 
 /**
- * Prints an integer or decimal number with the specified 
+ * Prints an integer or decimal number with the specified
  * format and returns the number of characters printed.
  *
  * @param format The format structure containing the formatting information.
@@ -598,7 +599,7 @@ int					print_p(t_format *format, void *ptr);
 int					print_d_i(t_format *format, int nb);
 
 /**
- * Prints an unsigned integer with the specified format 
+ * Prints an unsigned integer with the specified format
  * and returns the number of characters printed.
  *
  * @param format The format structure containing the formatting information.
@@ -608,7 +609,7 @@ int					print_d_i(t_format *format, int nb);
 int					print_u(t_format *format, unsigned int nb);
 
 /**
- * Prints a hexadecimal number with the specified format 
+ * Prints a hexadecimal number with the specified format
  * and returns the number of characters printed.
  *
  * @param format The format structure containing the formatting information.
@@ -637,7 +638,7 @@ char				*formatted_width_minus_zero(char *str, int width,
  * @param precision The precision to format the number to.
  * @param has_plus Whether the plus flag is present.
  * @param has_space Whether the space flag is present.
- * @return The formatted number string with 
+ * @return The formatted number string with
  * the appropriate precision and flags.
  */
 char				*formatted_number_precision(char *str, int precision,

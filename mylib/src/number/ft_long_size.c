@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_long_size.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vbonnard <vbonnard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vbonnard <vbonnard@student.42perpignan.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 22:42:10 by marvin            #+#    #+#             */
 /*   Updated: 2025/01/31 16:11:09 by vbonnard         ###   ########.fr       */

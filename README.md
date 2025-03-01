@@ -1,6 +1,7 @@
 # Minitalk - Process Communication Using Signals
 
 ## 📌 Description
+
 **Minitalk** is a simple project written in **C** that demonstrates inter-process communication using UNIX signals. It consists of a **client** program that sends a string to a **server** process, which then displays the received message.
 
 The project primarily uses the **SIGUSR1** and **SIGUSR2** signals to transmit data bit by bit between processes.
@@ -9,37 +10,45 @@ The project primarily uses the **SIGUSR1** and **SIGUSR2** signals to transmit d
 
 ## 🎮 Features
 
-- 📨 **Send strings from a client process to a server process**
-- 📶 **Bitwise transmission using SIGUSR1 and SIGUSR2 signals**
-- 🖨 **Server displays the received message in real-time**
-- ✅ **Acknowledgment system** to ensure correct reception of each bit
-- ❌ **Error handling** for invalid inputs
+-   📨 **Send strings from a client process to a server process**
+-   📶 **Bitwise transmission using SIGUSR1 and SIGUSR2 signals**
+-   🖨 **Server displays the received message in real-time**
+-   ✅ **Acknowledgment system** to ensure correct reception of each bit
+-   ❌ **Error handling** for invalid inputs
 
 ---
 
 ## 🛠 Compilation and Execution
 
 ### 🔧 **Compilation**
+
 Compile both the server and client programs with:
+
 ```sh
 make
 ```
 
 ### ▶️ **Execution**
+
 #### Start the server:
+
 ```sh
 ./server
 ```
+
 The server will display its **PID**.
 
 #### Send a message from the client:
+
 ```sh
 ./client <server_pid> "Your message here"
 ```
-- `<server_pid>` : The PID of the running server process
-- `"Your message here"` : The message to send
+
+-   `<server_pid>` : The PID of the running server process
+-   `"Your message here"` : The message to send
 
 Example:
+
 ```sh
 ./client 12345 "Hello, World!"
 ```
@@ -74,10 +83,11 @@ minitalk/
 ---
 
 ## 📜 Author
-- **vbonnard** (<vbonnard@student.42.fr>)
+
+-   **vbonnard** (<vbonnard@student.42perpignan.fr>)
 
 ---
 
 ## 📌 Note
-This project was developed as part of **42 School**. If you encounter a bug or have suggestions, feel free to contribute! 🚀
 
+This project was developed as part of **42 School**. If you encounter a bug or have suggestions, feel free to contribute! 🚀
